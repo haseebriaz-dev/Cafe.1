@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Real CR.png">
+    <title>CR Café & Restaurant Menu | Order Online in Shakargarh</title>
+    <meta name="description" content="Explore the full digital menu of CR Café & Restaurant Shakargarh. Order Special Pizza, Zinger Burgers, Paratha Rolls, Desi Karahi, BBQ, and refreshing Shakes online via WhatsApp.">
+    <meta name="keywords" content="CR Cafe menu, pizza price shakargarh, zinger burger shakargarh, chicken karahi shakargarh, bbq menu shakargarh">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CR Café & Restaurant Full Digital Menu - Shakargarh">
+    <meta property="og:description" content="Browse our delicious fast food deals, premium pizzas, burgers, desi handi, and BBQ. Easy ordering via WhatsApp!">
+    <meta property="og:image" content="Real CR.png">
+
+    <link rel="stylesheet" href="menu.css">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="brand-area">
+            <img src="Real CR.jpg" alt="CR Logo" class="logo">
+            <div class="cafename">CR Café & Restaurant</div>
+        </div>
+
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#sajji-section">Special Sajji</a>
+            <a href="#pizzas">Pizzas</a>
+            <a href="#burgers">Burgers & Shawarma</a>
+            <a href="#rolls-wraps">Rolls & Wraps</a>
+            <a href="#starters-sides">Starters & Pasta</a>
+            <a href="#pakistani-handi">Desi Handi</a>
+            <a href="#pakistani-karahi">Karahi Bar</a>
+            <a href="#bbq-tandoor">BBQ & Tandoor</a>
+            <a href="#chinese-rice">Chinese & Rice</a>
+            <a href="#drinks-desserts">Drinks & Shakes</a>
+            <a href="#special-deals">🔥 Special Deals</a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="#cust-name" class="mobile-cart-btn">
+                📦 <span id="mobile-cart-count">0</span>
+            </a>
+            <button class="hamburger-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </div>
+
+    <div class="menu-backdrop" id="menuBackdrop" onclick="toggleMobileMenu()"></div>
+
+    <div class="mobile-nav-overlay" id="mobileMenu">
+        <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+        <a href="#sajji-section" onclick="toggleMobileMenu()">Sajji</a>
+        <a href="#special-deals" onclick="toggleMobileMenu()">🔥 Special Deals</a>
+        <a href="#pizzas" onclick="toggleMobileMenu()">Pizzas</a>
+        <a href="#burgers" onclick="toggleMobileMenu()">Burgers & Shawarma</a>
+        <a href="#rolls-wraps" onclick="toggleMobileMenu()">Rolls & Wraps</a>
+        <a href="#starters-sides" onclick="toggleMobileMenu()">Starters & Pasta</a>
+        <a href="#pakistani-handi" onclick="toggleMobileMenu()">Desi Handi</a>
+        <a href="#pakistani-karahi" onclick="toggleMobileMenu()">Karahi Bar</a>
+        <a href="#bbq-tandoor" onclick="toggleMobileMenu()">BBQ & Tandoor</a>
+        <a href="#chinese-rice" onclick="toggleMobileMenu()">Chinese & Rice</a>
+        <a href="#drinks-desserts" onclick="toggleMobileMenu()">Drinks & Shakes</a>
+    </div>
+
+    <div class="container">
+        <div class="main">
+
+            <div id="sajji-section" class="food-category">
+    <h2 class="category-title">🍗 Special Sajji</h2>
+    <div class="menu-grid" id="sajji-grid"></div>
+</div>
+
+            <div id="pizzas" class="food-category">
+                <h2 class="category-title">🍕 Premium Pizzas</h2>
+
+                <h3 class="session-title">CR Special Pizzas</h3>
+                <div class="menu-grid" id="special-pizzas-grid"></div>
+
+                <h3 class="session-title">Stuffer & Regular Pizzas</h3>
+                <div class="menu-grid" id="regular-pizzas-grid"></div>
+            </div>
+
+            <div id="burgers" class="food-category">
+                <h2 class="category-title">🍔 Burgers & Shawarma</h2>
+                <div class="menu-grid" id="burgers-grid"></div>
+            </div>
+
+            <div id="rolls-wraps" class="food-category">
+                <h2 class="category-title">🌯 Paratha Rolls & Wraps</h2>
+                <div class="menu-grid" id="rolls-grid"></div>
+            </div>
+
+            <div id="starters-sides" class="food-category">
+                <h2 class="category-title">🍟 Starters, Fries & Pasta</h2>
+                <div class="menu-grid" id="starters-grid"></div>
+            </div>
+
+            <div id="pakistani-handi" class="food-category">
+                <h2 class="category-title">🍲 Pakistani Desi Handi</h2>
+                <div class="menu-grid" id="handi-grid"></div>
+            </div>
+
+            <div id="pakistani-karahi" class="food-category">
+                <h2 class="category-title">🥘 Chicken, Mutton & Beef Karahi</h2>
+                <div class="menu-grid" id="karahi-grid"></div>
+            </div>
+
+            <div id="bbq-tandoor" class="food-category">
+                <h2 class="category-title">🍢 BBQ & Fresh Tandoor</h2>
+                <div class="menu-grid" id="bbq-grid"></div>
+            </div>
+
+            <div id="chinese-rice" class="food-category">
+                <h2 class="category-title">🍚 Chinese Dishes & Rice</h2>
+                <div class="menu-grid" id="chinese-grid"></div>
+            </div>
+
+            <div id="drinks-desserts" class="food-category">
+                <h2 class="category-title">🥤 Coffee, Shakes & Cold Drinks</h2>
+                <div class="menu-grid" id="drinks-grid"></div>
+            </div>
+
+            <div id="special-deals" class="food-category">
+                <h2 class="category-title">🔥 Super Discount Special Deals</h2>
+                <div class="menu-grid" id="deals-grid"></div>
+            </div>
+
+        </div>
+
+        <div class="rightaside">
+            <div class="cart-title"><span>Your Order</span><span>🛒</span></div>
+            <div class="form-section">
+                <span class="form-label">📋 Delivery Information:</span>
+                <input type="text" id="cust-name" class="form-input" placeholder="Apna Naam (Your Name)...">
+                <input type="text" id="cust-location" class="form-input" placeholder="Mukammal Pata (Delivery Address)...">
+
+                <span class="form-label">💳 Payment Method:</span>
+                <select id="pay-method" class="form-select">
+                    <option value="Cash on Delivery (COD)">💵 Cash on Delivery (COD)</option>
+                    <option value="Easypaisa">📱 Easypaisa</option>
+                    <option value="JazzCash">📱 JazzCash</option>
+                </select>
+                <ul id="cart-items">
+                    <li style="color: #888; border: none; text-align: center; padding: 15px 0;">Your cart is empty.</li>
+                </ul>
+                <div class="cart-total"><span>Total Bill:</span><span>Rs. <span id="total-price">0</span></span></div>
+                <button class="order-btn" onclick="sendOrderWhatsApp()">Send Order</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>📍 Location:</strong> Chak Amru Road, Shakargarh</p>
+                <p><strong>📞 Contact:</strong> 0307-1777429 | 0345-7777429</p>
+            </div>
+
+            <div class="footer-socials">
+                <a href="tel:03071777429">📞 Call Us</a>
+                <a href="https://wa.me/923071777429" target="_blank">💬 WhatsApp</a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 CR Cafe & Restaurant. All rights reserved.</p><br>
+                <p>Cafe Owner : Shahid Hussain</p> <br>
+                <p>&copy; Made by Haseeb Riaz</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

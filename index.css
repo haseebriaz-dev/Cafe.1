@@ -1,0 +1,648 @@
+/* ==========================================================================
+   1. CSS VARIABLES & THEME SETUP (World-Standard Practice)
+   ========================================================================== */
+:root {
+    --primary: #ff6b12;
+    --primary-hover: #e05300;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --section-about-bg: #1a1a1a;
+    --footer-bg: #0d0d0d;
+    
+    /* Text Colors */
+    --text-light: #f5f5f5;
+    --text-dark: #121212;
+    --text-muted: #aaa;
+    --text-card-p: #b3b3b3;
+    --text-hero-p: #dddddd;
+    
+    /* Fonts & Transitions */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-smooth: all 0.3s ease;
+    --transition-img: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   2. GLOBAL RESETS
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Default state for mobile-specific element on desktop */
+.header-order-btn {
+    display: none;
+}
+
+/* ==========================================================================
+   3. STICKY NAVIGATION HEADER (Desktop First)
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 32px;
+    background-color: #080300;
+    opacity: 0.8;
+}
+
+.logo-area img {
+    height: 75px;
+    width: 70px;
+    object-fit: cover;
+}
+
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    align-items: center; 
+    text-align: center;
+}
+
+.brand-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    margin-left: 0;
+}
+
+.brand-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a {
+    color: #000000;
+    font-weight: 500;
+    font-size: 15px;
+    transition: var(--transition-smooth);
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Hamburger Toggle Button (Desktop Hidden) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: var(--transition-smooth);
+}
+
+/* Buttons Styling (Cleaned Specificity - Removed !important) */
+nav a.order {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: var(--transition-smooth);
+}
+
+nav a.order:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+}
+
+.cta-nav-btn {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: var(--transition-smooth);
+}
+
+.cta-nav-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   4. HERO BANNER SECTION
+   ========================================================================== */
+.hero {
+    position: relative;
+    padding: 100px 5%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), 
+                url('https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/generated-media/d15fde59-84e7-49f7-b68c-d2b69b067f7a-IKL0oeTTRJvH075YQJf570Xywao4IQ.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-hero-p);
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. SECTION GENERIC LAYOUT
+   ========================================================================== */
+section {
+    padding: 80px 5%;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   6. OUR SPECIALITIES GRID
+   ========================================================================== */
+.specialities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.speciality-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2d2d2d;
+    transition: var(--transition-smooth);
+}
+
+.speciality-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(255, 107, 18, 0.1);
+}
+
+.card-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+    background: #262626;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-img);
+}
+
+.speciality-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-info {
+    padding: 25px;
+}
+
+.card-info h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.card-info p {
+    color: var(--text-card-p);
+    font-size: 14px;
+}
+
+.card-link {
+    display: block;
+}
+
+.card-link:hover h3 {
+    color: #ffcc00;
+}
+
+/* ==========================================================================
+   7. SEE OUR FOOD: LIVE GALLERY
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    height: 260px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-img);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   8. ABOUT US SPLIT BANNER
+   ========================================================================== */
+.about-section {
+    background-color: var(--section-about-bg);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    border-top: 1px solid #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #cccccc;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   9. BOTTOM CALL TO ACTION (CTA)
+   ========================================================================== */
+.bottom-cta {
+    background: linear-gradient(rgba(255, 107, 18, 0.1), rgba(0, 0, 0, 0.9)), 
+                url('https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/infinite-images/bffbbe67-e879-4125-a9e1-95520252ddab-wWw2ctN325iWH01SsE2tXcnKJzege3.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 5%;
+}
+
+.bottom-cta h2 {
+    font-size: 38px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.bottom-cta p {
+    color: #dddddd;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   10. FOOTER LAYOUT
+   ========================================================================== */
+footer {
+    background-color: var(--footer-bg);
+    color: #999999;
+    padding: 60px 5% 30px 5%;
+    font-size: 14px;
+    border-top: 2px solid var(--primary);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.footer-col h4 {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col p {
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #cccccc;
+    transition: var(--transition-smooth);
+}
+
+/* Fix: Color override applied correctly */
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid #222222;
+    text-align: center;
+    padding-top: 30px;
+    color: #666666;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE MEDIA STYLES (Cleaned & Grouped Legally)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        position: relative; /* Absolute positioning ko control karne ke liye */
+        height: 80px; /* Ek fixed height taake text aur logo align rahein */
+    }
+
+    /* 1. Left Side: Hamburger aur line */
+    .hamburger {
+        display: flex;
+        order: 1;
+        position: relative;
+        padding-right: 15px;
+    }
+
+    .hamburger::after {
+        content: "";
+        position: absolute;
+        right: -100%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 25px;
+        background-color: #080300;
+        opacity: 0.8;
+    }
+
+    /* 2. Logo Area Container (Iske andar logo aur text dono hain) */
+    .logo-area {
+        order: 2;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo-area::before {
+        display: none; /* Desktop wali line remove */
+    }
+
+    /* EXACT CENTER LOGO: Is code se logo har mobile par bilkul center mein aayega */
+    .logo-area img {
+        height: 65px;
+        width: 60px;
+        object-fit: cover;
+        position: absolute;
+        left: 45%;
+        top: 45%;
+        transform: translate(-50%, -50%); /* Bilkul center align karne ke liye */
+        z-index: 5;
+    }
+
+   /* 3. Right Side: Cafe Name Styling */
+    .brand-text-wrapper {
+        text-align: center; /* موبائل پر بھی سنٹر میں رہے گا */
+        align-items: center;
+        margin-left: auto; /* اس کو extreme right یا صحیح جگہ پر پش کرنے کے لیے */
+        z-index: 2;
+    }
+
+    .brand-title {
+        font-size: 30px;
+    }
+
+    .brand-subtitle {
+        font-size: 11px;
+    }
+
+    .header-order-btn {
+        display: none !important;
+    }
+
+    /* Baqi nav aur dropdown ka code pehle wala hi rahega... */
+
+
+    /* 3. Navigation Dropdown Configuration */
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid var(--primary);
+        z-index: 999;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 18px;
+        color: #000000;
+    }
+
+    nav .order {
+        display: block; /* Dropdown ke andar order button dikhega */
+    }
+
+    /* Hamburger Animations */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* Other Responsive elements */
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .about-section {
+        gap: 30px;
+    }
+}
+
+
+/* ==========================================================================
+   12. TYPEWRITER EFFECT CURSOR
+   ========================================================================== */
+.cursor {
+    display: inline-block;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
